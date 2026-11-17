@@ -23,6 +23,11 @@ plugins {
 }
 
 android {
+    // ESTA ES LA LÍNEA QUE AGREGAMOS PARA QUE EL MODELO NO SE COMPRIMA
+    aaptOptions {
+        noCompress "tflite"
+    }
+
     compileSdkVersion 29
 
     defaultConfig {
@@ -78,6 +83,10 @@ dependencies {
     implementation "androidx.activity:activity-ktx:1.1.0"
 
     // TODO 5: Optional GPU Delegates
+    // TODO 5: Optional GPU Delegates
+    implementation 'org.tensorflow:tensorflow-lite-task-vision:0.4.0'
+    implementation 'org.tensorflow:tensorflow-lite-support:0.4.0'
+    implementation 'org.tensorflow:tensorflow-lite:2.8.0'
 
 
     testImplementation 'junit:junit:4.13'
